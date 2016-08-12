@@ -1,0 +1,77 @@
+﻿@*  Authors & Student Number:
+    Mayank Raval 200300508
+    Fei Wang 200278460
+    Mayank Bhardwaj 200305245
+    Siqian Yu 200286902
+    Date Modified: 08-05-2016
+    File Description: This is the Food list page.
+*@
+@model IEnumerable<EcommP2.Models.Food>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="home">
+    <div class="container">
+        <div class="row transbox">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <div class="col-md-12 col-sm-12">
+                <h2>Menu Items</h2>
+
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.type)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.image)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name) <br />
+                                <a href="~/Foods/Details/@item.foodID"><img src="~/Assests/img/@Html.DisplayFor(modelItem => item.type)/@Html.DisplayFor(modelItem => item.image)" height="150" width="150" /> </a>
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.image)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.foodID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.foodID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.foodID })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

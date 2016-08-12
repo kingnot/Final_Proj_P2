@@ -1,0 +1,87 @@
+﻿@*  Authors & Student Number:
+    Mayank Raval 200300508
+    Fei Wang 200278460
+    Mayank Bhardwaj 200305245
+    Siqian Yu 200286902
+    Date Modified: 08-05-2016
+    File Description: This is the food details page user get redirected from foods/index.cshtml once user clicked on any item.
+*@
+@model EcommP2.Models.Food
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section id="home">
+    <div class="container">
+        <div class="row transbox">
+            <div class="col-md-12 col-sm-12">
+                <table class="table">
+                    <tr>
+                        <td rowspan="5"><img src="~/Assests/img/@Html.DisplayFor(model => model.type)/@Html.DisplayFor(model => model.image)" height="400" width="400" /></td>
+                    </tr>
+                    <tr><td><h2>@Html.DisplayFor(model => model.name)</h2></td></tr>
+                    <tr><td><b> Description :</b> @Html.DisplayFor(model => model.description)</td></tr>
+                    <tr><td>Price : $@Html.DisplayFor(model => model.price)</td></tr>
+                    <tr><td>Quatity : <input style="color:black;" type="number" name="quantity" min="1" max="5" value="1"></td></tr>
+                    <tr>
+                        <td>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.foodID }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </p>
+                        </td>
+                        <td><input type="submit" value="Add to Cart" class="btn btn-default" /></td>
+                    </tr>
+                </table>
+                @*<div>
+                        <h4>Food Description</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.type)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.type)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.name)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.name)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.description)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.description)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.price)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.price)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.image)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.image)
+                            </dd>
+
+                        </dl>
+                    </div>*@
+
+            </div>
+        </div>
+    </div>
+</section>
