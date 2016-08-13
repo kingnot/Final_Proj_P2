@@ -5,15 +5,15 @@ namespace EcommP2.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EcommP2.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EcommP2.Models.RestaurantContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "EcommP2.Models.ApplicationDbContext";
+            ContextKey = "EcommP2.Models.RestaurantContext";
         }
 
-        protected override void Seed(EcommP2.Models.ApplicationDbContext context)
+        protected override void Seed(EcommP2.Models.RestaurantContext context)
         {
             //  This method will be called after migrating to the latest version.
 
