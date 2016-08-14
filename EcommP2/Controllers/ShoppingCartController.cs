@@ -1,4 +1,15 @@
-﻿using System;
+﻿/**
+ * Authors & Student Number:
+ * Mayank Raval 200300508
+ * Fei Wang 200278460
+ * Mayank Bhardwaj 200305245
+ * Siqian Yu 200286902
+ * Date Modified: 08-12-2016
+ * File Description: This is the ShoppingCart Controller for View Cart, Add to Cart
+ *      Remove from Cart and Cart Summary
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,14 +41,14 @@ namespace EcommP2.Controllers
         // GET: /Store/AddToCart/5
         public ActionResult AddToCart(int id)
         {
-            // Retrieve the album from the database
-            var addedAlbum = storeDB.Foods
+            // Retrieve the food from the database
+            var addedFood = storeDB.Foods
                 .Single(food => food.foodID == id);
 
             // Add it to the shopping cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
-            cart.AddToCart(addedAlbum);
+            cart.AddToCart(addedFood);
 
             // Go back to the main store page for more shopping
             return RedirectToAction("Index");
@@ -50,8 +61,8 @@ namespace EcommP2.Controllers
             // Remove the item from the cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
 
-            // Get the name of the album to display confirmation
-            string albumName = storeDB.Carts
+            // Get the name of the food to display confirmation
+            string foodName = storeDB.Carts
                 .Single(item => item.RecordId == id).Food.name;
 
             // Remove from cart
@@ -60,7 +71,7 @@ namespace EcommP2.Controllers
             // Display the confirmation message
             var results = new ShoppingCartRemoveViewModel
             {
-                Message = Server.HtmlEncode(albumName) +
+                Message = Server.HtmlEncode(foodName) +
                     " has been removed from your shopping cart.",
                 CartTotal = cart.GetTotal(),
                 CartCount = cart.GetCount(),

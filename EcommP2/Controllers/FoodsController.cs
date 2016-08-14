@@ -1,4 +1,15 @@
-﻿using System;
+﻿/**
+ * Authors & Student Number:
+ * Mayank Raval 200300508
+ * Fei Wang 200278460
+ * Mayank Bhardwaj 200305245
+ * Siqian Yu 200286902
+ * Date Modified: 08-05-2016
+ * File Description: This is the Food Controller for Menu(Index), Food Detail,
+ *  Create Food, Edit Food and Delete Food views.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;

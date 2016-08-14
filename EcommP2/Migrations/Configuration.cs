@@ -10,7 +10,6 @@ namespace EcommP2.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "EcommP2.Models.RestaurantContext";
         }
 
         protected override void Seed(EcommP2.Models.RestaurantContext context)
