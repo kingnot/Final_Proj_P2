@@ -11,60 +11,68 @@
     ViewBag.Title = "Shopping Cart";
 }
 
-<h3>
-    <em>Review</em> your cart:
-</h3>
-<p class="button">
-    @Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")
-</p>
-<div id="update-message">
-</div>
-<table>
-    <tr>
-        <th>
-            Food Name
-        </th>
-        <th>
-            Price (each)
-        </th>
-        <th>
-            Quantity
-        </th>
-        <th></th>
-    </tr>
-    @foreach (var item in
-        Model.CartItems)
-    {
-        <tr id="row-@item.RecordId">
-            <td>
-                @Html.ActionLink(item.Food.name, "Details",
+<section id="home">
+    <div class="container">
+        <div class="row transbox">
+            <div class="col-md-12 col-sm-12">
+                <h3>
+                    <em>Review</em> your cart:
+                </h3>
+                <p class="button">
+                    @Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")
+                </p>
+                <div id="update-message">
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            Food Name
+                        </th>
+                        <th>
+                            Price (each)
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in
+Model.CartItems)
+                    {
+                        <tr id="row-@item.RecordId">
+                            <td>
+                                @Html.ActionLink(item.Food.name, "Details",
                "Store", new { id = item.foodID }, null)
-            </td>
+                            </td>
 
-            <td>
-                @item.Food.price
-            </td>
-            <td id="item-count-@item.RecordId">
-                @item.Count
-            </td>
-            <td>
-                <a href="#" class="RemoveLink"
-                   data-id="@item.RecordId">
-                    Remove
-                    from cart
-                </a>
-            </td>
-        </tr>
-    }
-    <tr>
-        <td>
-            Total
-        </td>
-        <td></td>
-        <td></td>
-        <td id="cart-total">
-            @Model.CartTotal
-        </td>
-    </tr>
-</table>
+                            <td>
+                                @item.Food.price
+                            </td>
+                            <td id="item-count-@item.RecordId">
+                                @item.Count
+                            </td>
+                            <td>
+                                <a href="#" class="RemoveLink"
+                                   data-id="@item.RecordId">
+                                    Remove
+                                    from cart
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                            Total
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td id="cart-total">
+                            @Model.CartTotal
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+    </section>
 
