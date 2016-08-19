@@ -14,6 +14,7 @@ using System.Linq;
 using System.Web;
 using EcommP2.Models;
 using System.Web.Mvc;
+using System.Data.Entity.Core;
 
 namespace EcommP2.Models
 {
@@ -62,6 +63,7 @@ namespace EcommP2.Models
             }
             // Save changes
             storeDB.SaveChanges();
+            
         }
         public int RemoveFromCart(int id)
         {
@@ -84,7 +86,8 @@ namespace EcommP2.Models
                     storeDB.Carts.Remove(cartItem);
                 }
                 // Save changes
-                storeDB.SaveChanges();
+                    storeDB.SaveChanges();
+                
             }
             return itemCount;
         }
