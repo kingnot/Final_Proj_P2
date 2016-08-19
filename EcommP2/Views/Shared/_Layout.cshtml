@@ -35,6 +35,7 @@
                     <li>@Html.ActionLink("Menu", "Index", "Foods", null, new { @class = "smoothScroll" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "smoothScroll" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "smoothScroll" })</li>
+                    <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
