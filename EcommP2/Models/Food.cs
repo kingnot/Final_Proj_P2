@@ -23,19 +23,24 @@ namespace EcommP2.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "TYPE")]
         public string type { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "NAME")]
         public string name { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "DESCRIPTION")]
         public string description { get; set; }
 
+        [Display(Name = "PRICE")]
         public decimal price { get; set; }
 
         [Required]
+        [Display(Name = "IMAGE")]
         public string image { get; set; }
     }
 }

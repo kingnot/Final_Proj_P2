@@ -2,24 +2,31 @@
 
 @using (Html.BeginForm())
 {
-
-    <h2>Address And Payment</h2>
-    <fieldset>
-        <legend>Shipping Information</legend>
-        @Html.EditorForModel()
-    </fieldset>
-    <fieldset>
-        <legend>Payment</legend>
-        <p>
-            We're running a promotion: all music is free
-            with the promo code: "FREE"
-        </p>
-        <div class="editor-label">
-            @Html.Label("Promo Code")
+    <section id="home">
+        <div class="container">
+            <div class="row transbox">
+                <div class="col-md-12 col-sm-12">
+                    <h2>Address And Payment</h2>
+                    <fieldset>
+                        <legend>Shipping Information</legend>
+                        @Html.EditorForModel()
+                    </fieldset>
+                    <fieldset>
+                        <legend>Payment</legend>
+                        <p>
+                            We're running a promotion: all food is free
+                            with the promo code: "FREE"
+                        </p>
+                        <div class="editor-label">
+                            @Html.Label("Promo Code")
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBox("PromoCode")
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="Submit Order" />
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.TextBox("PromoCode")
-        </div>
-    </fieldset>
-    <input type="submit" value="Submit Order" />
+    </section>
 }

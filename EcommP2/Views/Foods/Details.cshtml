@@ -31,7 +31,6 @@
                                 @Html.ActionLink("Back to List", "Index")
                             </p>
                         </td>
-                        @*@<td><input type="submit" value="Add to Cart" class="btn btn-default" /></td>*@
                         <td><p class="btn btn-default">@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.foodID }, "")</p></td>
                     </tr>
                 </table>

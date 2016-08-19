@@ -15,12 +15,9 @@
     <div class="container">
         <div class="row transbox">
             <div class="col-md-12 col-sm-12">
-                <h3>
+                <h2>
                     <em>Review</em> your cart:
-                </h3>
-                <p class="button">
-                    @Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")
-                </p>
+                </h2>
                 <div id="update-message">
                 </div>
                 <table class="table">
@@ -36,15 +33,13 @@
                         </th>
                         <th></th>
                     </tr>
-                    @foreach (var item in
-Model.CartItems)
+                    @foreach (var item in Model.CartItems)
                     {
                         <tr id="row-@item.RecordId">
                             <td>
                                 @Html.ActionLink(item.Food.name, "Details",
-               "Store", new { id = item.foodID }, null)
+                               "Store", new { id = item.foodID }, null)
                             </td>
-
                             <td>
                                 @item.Food.price
                             </td>
@@ -69,6 +64,12 @@ Model.CartItems)
                         <td id="cart-total">
                             @Model.CartTotal
                         </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><p class="btn btn-default">@Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")</p></td>
                     </tr>
                 </table>
                 </div>

@@ -74,6 +74,10 @@ hr {
   padding-bottom: 100px;
 }
 
+th {
+    text-align: center;
+}
+
 
 /* ==========================================================================
 preloader section

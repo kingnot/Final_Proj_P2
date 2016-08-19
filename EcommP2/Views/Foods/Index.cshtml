@@ -31,13 +31,13 @@
                             @Html.DisplayNameFor(model => model.name)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.image)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.description)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.price)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.image)
                         </th>
                         <th></th>
                     </tr>
@@ -49,18 +49,16 @@
                                 @Html.DisplayFor(modelItem => item.type)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.name) <br />
-                                <a href="~/Foods/Details/@item.foodID"><img src="~/Assests/img/@Html.DisplayFor(modelItem => item.type)/@Html.DisplayFor(modelItem => item.image)" height="150" width="150" /> </a>
-
+                                <a href="~/Foods/Details/@item.foodID">@Html.DisplayFor(modelItem => item.name)</a>
+                            </td>
+                            <td>
+                                <a href="~/Foods/Details/@item.foodID"><img src="~/Assests/img/@Html.DisplayFor(modelItem => item.type)/@Html.DisplayFor(modelItem => item.image)" height="150" width="150" /></a>
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.description)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.price)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.image)
                             </td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.foodID }) |
