@@ -416,7 +416,53 @@ contact section
   color: #fff;
 }
 
+/* ==========================================================================
+shopping section
+========================================================================== */
+.shopping-box {
+    margin-top: 50px;
+    background: rgba(0, 0, 0, .075);
+    color: #fff;
+    font:bold;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 
+.shopping-box .section-title {
+    color: #fff;
+}
+
+.shopping-box legend {
+    color: white;
+}
+
+#shipping-form {
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+#shipping-form input {
+    width:350px;
+}
+
+#shipping-form .editor-field {
+    color: #333;
+}
+#shipping-form .field-validation-error {
+    color: #e72323;
+}
+
+#PromoCode {
+    color: #333;
+}
+
+#home #submit-button {
+    color: #337ab7;
+}
+
+#home #update-message {
+    color: #e72323;
+}
 /* ==========================================================================
 footer section
 ========================================================================== */

@@ -11,69 +11,75 @@
     ViewBag.Title = "Shopping Cart";
 }
 
-<section id="home">
+<section id="home" class="shopping-box">
     <div class="container">
-        <div class="row transbox">
-            <div class="col-md-12 col-sm-12">
-                <h2>
-                    <em>Review</em> your cart:
-                </h2>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <div class="section-title">
+                    <h2 class="heading bold">Review Your Cart</h2>
+                    <hr>
+                </div>
                 <div id="update-message">
                 </div>
-                <table class="table">
-                    <tr>
-                        <th>
-                            Food Name
-                        </th>
-                        <th>
-                            Price (each)
-                        </th>
-                        <th>
-                            Quantity
-                        </th>
-                        <th></th>
-                    </tr>
-                    @foreach (var item in Model.CartItems)
-                    {
-                        <tr id="row-@item.RecordId">
-                            <td>
-                                @Html.ActionLink(item.Food.name, "Details",
+            </div>
+            
+            <div class="transbox">
+                <div class="container">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Food Name
+                            </th>
+                            <th>
+                                Price (each)
+                            </th>
+                            <th>
+                                Quantity
+                            </th>
+                            <th></th>
+                        </tr>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <tr id="row-@item.RecordId">
+                                <td>
+                                    @Html.ActionLink(item.Food.name, "Details",
                                "Store", new { id = item.foodID }, null)
-                            </td>
+                                </td>
+                                <td>
+                                    @item.Food.price
+                                </td>
+                                <td id="item-count-@item.RecordId">
+                                    @item.Count
+                                </td>
+                                <td>
+                                    <a href="#" class="RemoveLink"
+                                       data-id="@item.RecordId">
+                                        Remove
+                                        from cart
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                        <tr>
                             <td>
-                                @item.Food.price
+                                Total
                             </td>
-                            <td id="item-count-@item.RecordId">
-                                @item.Count
-                            </td>
-                            <td>
-                                <a href="#" class="RemoveLink"
-                                   data-id="@item.RecordId">
-                                    Remove
-                                    from cart
-                                </a>
+                            <td></td>
+                            <td></td>
+                            <td id="cart-total">
+                                @Model.CartTotal
                             </td>
                         </tr>
-                    }
-                    <tr>
-                        <td>
-                            Total
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td id="cart-total">
-                            @Model.CartTotal
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><p class="btn btn-default">@Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")</p></td>
-                    </tr>
-                </table>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><p class="btn btn-default">@Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")</p></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 

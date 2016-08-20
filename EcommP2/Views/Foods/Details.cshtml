@@ -12,7 +12,7 @@
     ViewBag.Title = "Details";
 }
 
-<section id="home">
+<section id="home" class="shopping-box">
     <div class="container">
         <div class="row transbox">
             <div class="col-md-12 col-sm-12">
@@ -23,7 +23,7 @@
                     <tr><td><h2>@Html.DisplayFor(model => model.name)</h2></td></tr>
                     <tr><td><b> Description :</b> @Html.DisplayFor(model => model.description)</td></tr>
                     <tr><td>Price : $@Html.DisplayFor(model => model.price)</td></tr>
-                    <tr><td>Quatity : <input style="color:black;" type="number" name="quantity" min="1" max="5" value="1"></td></tr>
+                    <tr><td></td></tr>
                     <tr>
                         <td>
                             <p>
@@ -34,53 +34,6 @@
                         <td><p class="btn btn-default">@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.foodID }, "")</p></td>
                     </tr>
                 </table>
-                @*<div>
-                        <h4>Food Description</h4>
-                        <hr />
-                        <dl class="dl-horizontal">
-                            <dt>
-                                @Html.DisplayNameFor(model => model.type)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.type)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.name)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.name)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.description)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.description)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.price)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.price)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.image)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.image)
-                            </dd>
-
-                        </dl>
-                    </div>*@
-
             </div>
         </div>
     </div>
