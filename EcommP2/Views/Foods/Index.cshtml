@@ -15,9 +15,11 @@
 <section id="home" class="shopping-box">
     <div class="container">
         <div class="row transbox">
+            @*
             <p>
                 @Html.ActionLink("Create New", "Create")
             </p>
+            *@
             <div class="col-md-12 col-sm-12">
                 <h2>Menu Items</h2>
 
@@ -60,11 +62,13 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.price)
                             </td>
+                            @*
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.foodID }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.foodID }) |
+                                @Html.ActionLink("Edit", "Edit", new { id = item.foodID }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.foodID })
                             </td>
+                            *@                          
                         </tr>
                     }
 
