@@ -436,6 +436,10 @@ shopping section
     color: white;
 }
 
+.shopping-box fieldset {
+    padding-left: 5px;
+}
+
 #shipping-form {
     margin-left: 180px;
     margin-right: 180px;
