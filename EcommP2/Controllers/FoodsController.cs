@@ -46,6 +46,7 @@ namespace EcommP2.Controllers
             return View(food);
         }
 
+        [Authorize(Users = "admin")]
         // GET: Foods/Create
         public ActionResult Create()
         {
@@ -69,6 +70,7 @@ namespace EcommP2.Controllers
             return View(food);
         }
 
+        [Authorize(Users = "admin")]
         // GET: Foods/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -100,6 +102,7 @@ namespace EcommP2.Controllers
             return View(food);
         }
 
+        [Authorize(Users = "admin")]
         // GET: Foods/Delete/5
         public ActionResult Delete(int? id)
         {
