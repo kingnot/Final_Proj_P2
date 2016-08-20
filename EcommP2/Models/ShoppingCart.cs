@@ -3,8 +3,9 @@
  * Mayank Raval 200300508
  * Fei Wang 200278460
  * Mayank Bhardwaj 200305245
+ * Yiqi Zhang 200295414
  * Siqian Yu 200286902
- * Date Modified: 08-12-2016
+ * Date Modified: 08-19-2016
  * File Description: This is the file that provides required methods for Shopping Cart
  */
 
